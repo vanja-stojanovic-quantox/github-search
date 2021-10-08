@@ -1,26 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <title></title>
-</head>
-<body>
-
-  devfinder
-
-  Light
-  Dark
-
-  Search GitHub username...
-  Search
-
-  Joined
-
-  Repos
-  Followers
-  Following
-
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <script src="assets/js/script.js"></script>
+    <title>GitHub search</title>
+  </head>
+  <body id="body-el" class="dark light">
+    <section class="section">
+      <div class="all-content" onclick="hideSearchList()">
+        <div class="header">
+          <p class="devfinder">devfinder
+            <button id="dark-button" class="button-sheme" onclick="changeTheme(true)"><span class="button-text">DARK</span><img id="btn-icon" class="button-icon" src="assets/images/icon-moon.svg"></button>
+            <button id="light-button" class="button-sheme" onclick="changeTheme(false)"><span class="button-text">LIGHT</span><img id="btn-icon" class="button-icon" src="assets/images/icon-sun.svg"></button>
+          </p>
+        </div>
+        <div class="search-box">
+          <div class="search">
+            <img class="icon-search" src="assets/images/icon-search.svg">
+            <input id="git-username" class="input-search" type="text" placeholder="Search GitHub username&hellip;">
+            <span id="error-message" class="message"></span>
+            <button class="button-search" onclick="searchUsers()">Search</button>
+          </div>
+          <div id="user-list" class="search-list"></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <img id="user-image" class="profile-image" src="assets/images/octocat.png">
+            <div class="personal-data">
+              <h3 id="user-name" class="name"></h3>
+              <p class="profile-link"><a id="user-username" href="#"></a></p>
+              <p id="card-date-join" class="date-join"></p>
+            </div>
+          </div>
+          <p id="card-bio" class="paragraph-text"></p>
+          <div class="container-data">
+            <div class="container-inner">
+              <div class="repos">
+                <p class="data">Repos</p>
+                <p id="user-repos" class="data-number"></p>
+              </div>
+              <div class="followers">
+                <p class="data">Followers</p>
+                <p id="user-followers" class="data-number"></p>
+              </div>
+              <div class="following">
+                <p class="data">Following</p>
+                <p id="user-following" class="data-number"></p>
+              </div>
+            </div>
+          </div>
+          <div class="container-bottom">
+            <div class="bottom-left">
+              <div class="bottom-inner">
+                <img id="user-city-icon" class="icon-location" src="assets/images/icon-location.svg"><span id="user-city" class="location-information"></span>
+              </div>
+              <div class="bottom-inner">
+                <img id="user-website-icon" class="icon-website" src="assets/images/icon-website.svg"><span id="user-website" class="website-information"></span>
+              </div>
+            </div>
+            <div class="bottom-right">
+              <div class="bottom-inner">
+                <img id="user-twitter-icon" class="icon-twitter disabled" src="assets/images/icon-twitter.svg"><span id="user-twitter" class="twitter-information"></span>
+              </div>
+              <div class="bottom-inner">
+                <img id="user-company-icon" class="icon-company" src="assets/images/icon-company.svg"><span id="user-company" class="company-information"></span>   
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
