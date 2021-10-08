@@ -652,7 +652,7 @@ body .section .all-content .card .container-bottom .disabled {
   color: #90a4d4;
 }
 .dark .devfinder .button-sheme:active .button-icon, .dark .devfinder .button-sheme:hover .button-icon {
-  filter: invert(63%) sepia(64%) saturate(189%) hue-rotate(184deg) brightness(91%) contrast(93%);
+  filter: invert(44%) sepia(5%) saturate(4124%) hue-rotate(178deg) brightness(89%) contrast(89%) opacity(1.7);
 }
 .dark .search {
   background-color: #1e2a47 !important;
